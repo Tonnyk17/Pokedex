@@ -2,7 +2,9 @@
 const path = require ("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-
+const CssMinimizerWebpackPlugin = require("css-minimizer-webpack-plugin");
+const TerserPlugin = require("terser-webpack-plugin");
+const {CleanWebpackPlugin} = require("clean-webpack-plugin");
 
 module.exports = {
     entry : "./src/index.js",
@@ -43,7 +45,7 @@ module.exports = {
                 ],
             },
             {
-                test: /\.(jpg|png|jpeg|svg)$/,
+                test: /\.(jpg|png|gif|jpeg|mp4|svg|webm)$/,
                 use: [
                     {
                         loader: "url-loader",
@@ -63,7 +65,7 @@ module.exports = {
             filename: "assets/[name].[contenthash].css",
 
         }),
-       
+        new CleanWebpackPlugin(),
     ],
     devServer: {
         open: true,
@@ -72,6 +74,12 @@ module.exports = {
         contentBase: path.join(__dirname, 'dist'),
         compress: true,
     },
-   
+    optimization: {
+        minimize: true,
+        minimizer: [
+            new CssMinimizerWebpackPlugin(),
+            new TerserPlugin(),
+        ]
+    }
      
 }
