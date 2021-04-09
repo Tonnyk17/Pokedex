@@ -1,0 +1,15 @@
+.movements-item{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+.movement-button{
+    background-color: rgba(10, 216, 10, 0.5);
+    font-size: 12px;
+    padding: 3px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+.movement-button:hover{
+    background-color: rgba(3, 197, 3,1);
+}

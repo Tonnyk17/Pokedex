@@ -1,0 +1,10 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+   
+}
+body{
+    background-image: linear-gradient(to top, #526587, #506489, #4e648b, #4c638c, #4a628e, #455b87, #3f537f, #3a4c78, #303d67, #262f55, #1c2245, #121535);
+}
