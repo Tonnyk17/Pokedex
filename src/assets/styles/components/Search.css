@@ -16,7 +16,7 @@
     color: white;
 }
 .main-card-info{
-    height: 300px;
+    height: 330px;
     width: 100%;
     justify-self: self-end;
     max-width: 250px;
@@ -34,34 +34,56 @@
     background-color: #5c5c64;
 }
 .pokemon-stats-list{
+    width: 100%;
     padding: 5px;
 }
 .main-pokemon-stats{
     display: flex;
     list-style: none;
     justify-content: space-between;
-    font-size: 15px;
+    font-size: 12px;
+    height: 15px;
+    line-height: 15px;
+}
+.stats-points{
+    text-align: right;
+}
+.pokemon-stats-name{
+    text-align: left;
+    width: 80%;
 }
 .movements-selected{
     width: 100%;
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-    grid-gap: 5px;
-    
+    display: flex;
+    flex-direction: column;
 }
 .movements-selected-item{
+    display: grid;
+    grid-template-columns: 1fr 30px;
+    justify-items: center;
+    padding: 0 5px;
+}
+.movements-selected-name{
     background-color: teal;
+    line-height: 100%;
     border-radius: 5px;
-    font-size: 13px;
+    font-size: 12px;
+    margin: 3px;
+    width: 100%;
+
+}
+.movements-selected-icon{
+    width: 10%;
+    font-size: 12px;
 }
 .movements-container{
-    height: 300px;
+    height: 330px;
     overflow-y: scroll;
     width: 100%;
     max-width: 250px;
 }
 ::-webkit-scrollbar{
-    width: 12px;
+    width: 10px;
 }
 ::-webkit-scrollbar-thumb{
     background-color: rgb(69, 165, 221);
@@ -145,6 +167,12 @@
     .search-button:hover{
         background-color: rgba(0,0,0,0.4);
 
+    }
+    .movements-selected-item{
+        font-size: 14px;
+    }
+    .main-card-info,.movements-container{
+        height: 320px;
     }
     
 }

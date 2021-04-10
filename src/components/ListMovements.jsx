@@ -6,7 +6,7 @@ const ListMovements = ({ moves }) => {
     const { addMovements } = useContext(AppContext);
 
     const handleMovement = () => {
-            addMovements(moves.name)
+            addMovements(moves)
     }
     
     return(

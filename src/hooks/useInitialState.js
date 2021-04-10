@@ -41,7 +41,18 @@ const useInitialState = () => {
         })
         }
     }
-    
+    const removeMovement = payload => {
+        setMovements({
+            ...movements,
+            moves: movements.moves.filter(item => item.name !== payload)
+        })
+    }
+    const removeMovements = () => {
+        setMovements({
+            ...movements,
+            moves: []
+        })
+    }
     
     return{
         list,
@@ -50,7 +61,9 @@ const useInitialState = () => {
         search,
         nextPage,
         addMovements,
-        movements
+        movements,
+        removeMovement,
+        removeMovements
     }
 }
 

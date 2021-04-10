@@ -3,7 +3,7 @@ import AppContext from "../context/Appcontext";
 import "../assets/styles/components/Card.css";
 
 const Card = ({ pokeInfo }) => {
-    const { selection } = useContext(AppContext);
+    const { selection, removeMovements } = useContext(AppContext);
     const [pokemon, setPokemon] = useState({});
 
     
@@ -16,6 +16,7 @@ const Card = ({ pokeInfo }) => {
         
     const handleSelect = () => {
         selection(pokemon); 
+        removeMovements()
     }
     const isNull = Object.keys(pokemon).length > 0;
     

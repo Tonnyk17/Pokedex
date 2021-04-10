@@ -2,10 +2,11 @@ import React, { useContext } from "react";
 import "../assets/styles/components/Search.css"
 import AppContext from "../context/Appcontext";
 import ListMovements from "./ListMovements";
+import Moves from "./Moves";
 
 const Search = () => {
     
-    const { selected,search,movements,addFavorites,favorites } = useContext(AppContext);
+    const { selected,search,movements, removeMovements} = useContext(AppContext);
     const isEmpty = Object.keys(selected).length > 0;
    
     const handleSearch = (e)=>{
@@ -14,7 +15,8 @@ const Search = () => {
         const { pokeSearch } = e.target.elements;
         const pokeName = pokeSearch.value.toLowerCase();
                 
-        search(pokeName)
+        search(pokeName);
+        removeMovements();
         
     }
     const handleAddFavorites = () => {
@@ -33,6 +35,8 @@ const Search = () => {
             .then(data => console.log(data))
 
     }
+  
+    
     return(
         <>
             <div className="main-search-container">
@@ -61,7 +65,8 @@ const Search = () => {
                             </ul>
                             <div className="movements-selected">
                             {movements.moves.map(item => (
-                                <p className="movements-selected-item">{item}</p>
+                                <Moves move={item}/>
+                
                             ))
 
                             }

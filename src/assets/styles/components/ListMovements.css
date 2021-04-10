@@ -1,7 +1,8 @@
 .movements-item{
     display: flex;
     justify-content: space-between;
-    padding: 10px;
+    padding: 3px;
+    font-size: 13px;
 }
 .movement-button{
     background-color: rgba(10, 216, 10, 0.5);
@@ -12,4 +13,12 @@
 }
 .movement-button:hover{
     background-color: rgba(3, 197, 3,1);
+}
+@media screen and (min-width:800px){
+    .movements-item{
+        font-size: 16px;
+    }
+    .movement-button{
+        font-size: 14px;
+    }
 }
