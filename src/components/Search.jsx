@@ -92,6 +92,7 @@ const Search = () => {
                                 src="https://i.postimg.cc/qRhb4PN6/poke.png" 
                                 alt="pokemon" 
                                 className="main-pokemon-image"
+                                width="100px" height="100px"
                             />
                             <h3 className="main-pokemon-name">POKEMON</h3>
                             <p className="pokemon-stats-list">No stats</p>

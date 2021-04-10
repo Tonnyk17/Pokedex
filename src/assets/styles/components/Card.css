@@ -33,7 +33,7 @@
     font-weight: bold;
     line-height: 25px;
     color: white;
-    cursor: pointer;
+    cursor: url("../../images/pokeball-icon.ico"),pointer;
 }
 .card-button:hover{
     background-color: rgba(3, 197, 3,1);
