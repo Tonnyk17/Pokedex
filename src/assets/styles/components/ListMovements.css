@@ -10,6 +10,7 @@
     padding: 3px;
     border-radius: 5px;
     font-weight: bold;
+    cursor: pointer;
 }
 .movement-button:hover{
     background-color: rgba(3, 197, 3,1);
