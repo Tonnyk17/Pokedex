@@ -6,15 +6,15 @@ const ListMovements = ({ moves }) => {
     const { addMovements } = useContext(AppContext);
 
     const handleMovement = () => {
-            addMovements(moves)
+        addMovements(moves)
     }
-    
-    return(
+
+    return (
         <>
-        <div className="movements-item">
-            <p className="movement-name">{moves.name }</p>
-            <div className="movement-button" onClick={handleMovement}>Elegir</div>
-        </div>
+            <div className="movements-item">
+                <p className="movement-name">{moves.name}</p>
+                <div className="movement-button" onClick={handleMovement}>Select</div>
+            </div>
         </>
     )
 }

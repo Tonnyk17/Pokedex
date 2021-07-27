@@ -28,12 +28,12 @@
     width: 100%;
     top: 50px;
     text-align: center;
-    height: 80vh;
+    height: 100vh;
     padding: 0;
     left: -100%;
     position: absolute;
     transition: all 0.5s;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 1);
     z-index: 100;
 }
 .menu-button:checked ~ .header-list{

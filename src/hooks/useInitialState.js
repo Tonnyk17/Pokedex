@@ -5,40 +5,39 @@ const useInitialState = () => {
     const [selected, setSelect] = useState({});
     const [searchPoke, setSearchPoke] = useState(1);
     const [state, setState] = useState({});
-    const [movements, setMovements] = useState({moves:[]});
+    const [movements, setMovements] = useState({ moves: [] });
     const nextPage = payload => {
         setState(payload)
     }
-    useEffect(() =>{
+    useEffect(() => {
         fetch(`https://pokeapi.co/api/v2/pokemon/?limit=20&offset=${state}`)
-        .then(response => response.json())
-        .then(data => data.results)
-        .then(data =>  setList(data))
-    },[state])
-    
+            .then(response => response.json())
+            .then(data => data.results)
+            .then(data => setList(data))
+    }, [state])
+
     const selection = payload => {
-       setSelect({
-           ...payload,
-          
-       })
+        setSelect({
+            ...payload,
+
+        })
     }
     const search = payload => {
         setSearchPoke(payload)
     }
     useEffect(() => {
         fetch(`https://pokeapi.co/api/v2/pokemon/${searchPoke}/`)
-        .then(response => response.json())
-        .then(data => setSelect(data))
-         
-    },[searchPoke])
-   
-    const addMovements = payload =>{
-        if(movements.moves.length <= 3)
-        {
-        setMovements({
-            ...movements,
-            moves: [...movements.moves,payload]
-        })
+            .then(response => response.json())
+            .then(data => setSelect(data))
+
+    }, [searchPoke])
+
+    const addMovements = payload => {
+        if (movements.moves.length <= 3) {
+            setMovements({
+                ...movements,
+                moves: [...movements.moves, payload]
+            })
         }
     }
     const removeMovement = payload => {
@@ -53,8 +52,8 @@ const useInitialState = () => {
             moves: []
         })
     }
-    
-    return{
+
+    return {
         list,
         selected,
         selection,

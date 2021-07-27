@@ -1,0 +1,23 @@
+.pokedex-title{
+    width: 90%;
+    margin: 20px auto;
+    text-align: center;
+}
+.pokedex-container{
+    width: 90%;
+    display: grid;
+    grid-template-columns: 1fr;
+   grid-row-gap: 20px;
+    margin: 20px auto;
+    
+}
+@media screen and (min-width: 650px) {
+    .pokedex-container{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+@media screen and (min-width: 1025px) {
+    .pokedex-container{
+        grid-template-columns: repeat(4,1fr);
+    }
+}

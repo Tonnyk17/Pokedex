@@ -1,0 +1,29 @@
+.pokedex-main-container{
+    width: 280px;
+    background-color: aqua;
+    text-align: center;
+    color: white;
+    margin: 0 auto;
+    border: 1px solid black;
+    background-image: linear-gradient(to right bottom, #44444a, #5c5c64, #76757f, #928e9a, #aea9b7);
+}
+.pokedex-card-name{
+    width: 100%;
+    padding: 5px;
+    background-color: black;
+}
+.pokedex-card-container{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+}
+.pokedex-card-image{
+    width: 120px;
+}
+.card-movements-list{
+    list-style: none;
+    text-align: left;
+    margin: 5px 0;
+}

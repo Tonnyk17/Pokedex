@@ -6,42 +6,42 @@ const Card = ({ pokeInfo }) => {
     const { selection, removeMovements } = useContext(AppContext);
     const [pokemon, setPokemon] = useState({});
 
-    
+
     useEffect(() => {
         fetch(pokeInfo.url)
-        .then(response => response.json())
-        .then(data => setPokemon(data))
-        
-    },[pokeInfo])
-        
+            .then(response => response.json())
+            .then(data => setPokemon(data))
+
+    }, [pokeInfo])
+
     const handleSelect = () => {
-        selection(pokemon); 
+        selection(pokemon);
         removeMovements()
     }
     const isNull = Object.keys(pokemon).length > 0;
-    
-    return(
-        <>  
-            {isNull ? 
+
+    return (
+        <>
+            {isNull ?
                 <div className="card">
-                <h4 className="card-title">{pokeInfo.name = pokeInfo.name.toUpperCase()}</h4>
-                <img 
-                    src={pokemon.sprites.front_default} 
-                    alt={pokeInfo.name} 
-                    className="card-image"
-                    width="100px" height="100px"/>
-                <div className="card-button" onClick={handleSelect}>Seleccionar</div>
-            </div>
-            :
-            <div className="card">
-                <h4 className="card-title">{pokeInfo.name}</h4>
-                <img 
-                src="https://i.postimg.cc/qRhb4PN6/poke.png" 
-                alt={pokeInfo.name} 
-                className="card-image"
-                width="100px" height="100px"/>
-                <div className="card-button" onClick={handleSelect}>Seleccionar</div>
-            </div>
+                    <h4 className="card-title">{pokeInfo.name = pokeInfo.name.toUpperCase()}</h4>
+                    <img
+                        src={pokemon.sprites.front_default}
+                        alt={pokeInfo.name}
+                        className="card-image"
+                        width="100px" height="100px" />
+                    <div className="card-button" onClick={handleSelect}>Select</div>
+                </div>
+                :
+                <div className="card">
+                    <h4 className="card-title">{pokeInfo.name}</h4>
+                    <img
+                        src="https://i.postimg.cc/qRhb4PN6/poke.png"
+                        alt={pokeInfo.name}
+                        className="card-image"
+                        width="100px" height="100px" />
+                    <div className="card-button" onClick={handleSelect}>Select</div>
+                </div>
             }
         </>
     );
